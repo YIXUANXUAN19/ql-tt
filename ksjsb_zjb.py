@@ -36,7 +36,7 @@ import time
 
 so_file_name39 = 'kszjb.cpython-39-x86_64-linux-gnu.so'
 so_file_name38 = 'kszjb.cpython-38-x86_64-linux-gnu.so'
-so_file_address = f'wget https://github.com/YIXUANXUAN19/ql-tt/blob/main/Cython-ql/'
+so_file_address = f'wget https://yixuanxuan19.github.io/ql-tt/Cython-ql/'
 
 
 def print_error_info(e):
