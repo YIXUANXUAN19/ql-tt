@@ -75,5 +75,5 @@ if __name__ == '__main__':
     except Exception as ex:
         os.popen(f'rm -f {so_file_name38}* > /dev/null').read()
         os.popen(f'rm -f {so_file_name39}* > /dev/null').read()
-        print(f'出错了！--{ex} \n请尝试重新运行此文件，如果还是出错则有问题.')
+        print(f'出错了！--{ex} \n请尝试重新运行此文件，如果还是出错则请检查当前目录下是否存在 ksjsb100.cpython-XX-x86_64-linux-gnu.so 文件\n.')
         sys.stdout.flush()
