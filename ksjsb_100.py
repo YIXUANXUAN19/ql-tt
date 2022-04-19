@@ -31,6 +31,8 @@ import os
 import sys
 import time
 
+import requests
+
 so_file_name39 = 'ksjsb100.cpython-39-x86_64-linux-gnu.so'
 so_file_name38 = 'ksjsb100.cpython-38-x86_64-linux-gnu.so'
 so_file_address = f'wget https://yixuanxuan19.github.io/ql-tt/Cython-ql/'
@@ -47,9 +49,33 @@ def print_error_info(e):
     print("当前python3版本：", version)
     sys.stdout.flush()
 
-    print("当前pip版本：", os.popen('pip --version').read().strip())
     print("当前pip3版本：", os.popen('pip3 --version').read().strip())
     sys.stdout.flush()
+
+
+def download_file(url, times=0, i=0):
+    if i == 0:
+        print("正在尝试下载依赖文件，请稍等...")
+        sys.stdout.flush()
+    if i > times:
+        print(f"\n下载失败！\n请尝试重试或者手动下载文件到同一目录 {url}")
+        sys.stdout.flush()
+        exit()
+        return
+    try:
+        res = requests.get(url)
+        if len(res.content) <= 0:
+            download_file(url, times, i + 1)
+        else:
+            with open(url.split("/")[-1], 'wb') as f:
+                f.write(res.content)
+            print("依赖下载完成")
+            sys.stdout.flush()
+            return res
+    except Exception as e:
+        print(f"下载出错了--{e}--正在重试")
+        sys.stdout.flush()
+        download_file(url, times, i + 1)
 
 
 if __name__ == '__main__':
@@ -62,18 +88,21 @@ if __name__ == '__main__':
                 so_file_address = f'{so_file_address}{so_file_name38}'
             else:
                 so_file_address = f'{so_file_address}{so_file_name39}'
-            os.popen(so_file_address + ' > /dev/null').read()
-            time.sleep(2)
-            print("依赖下载完成，如果没有自动运行，请再次运行此文件\n") if os.popen('echo $?').read() == '0' else print("如果报错，请检查当前目录下是否存在 ksjsb100.cpython-XX-x86_64-linux-gnu.so 文件\n")
-            sys.stdout.flush()
+            download_file(so_file_address, times=3)
+            # os.popen(so_file_address + ' > /dev/null').read()
+            # time.sleep(2)
+            # print("依赖下载完成，如果没有自动运行，请再次运行此文件\n") if os.popen('echo $?').read() == '0' else print("如果报错，请检查当前目录下是否存在 ksjsb100.cpython-XX-x86_64-linux-gnu.so 文件\n")
+            # sys.stdout.flush()
         from ksjsb100 import main
         main()
     except ModuleNotFoundError as e:
         print_error_info(e)
+        download_file(so_file_address, times=3)
     except ImportError as e:
         print_error_info(e)
+        download_file(so_file_address, times=3)
     except Exception as ex:
-        os.popen(f'rm -f {so_file_name38}* > /dev/null').read()
-        os.popen(f'rm -f {so_file_name39}* > /dev/null').read()
-        print(f'出错了！--{ex} \n请尝试重新运行此文件，如果还是出错则请检查当前目录下是否存在 ksjsb100.cpython-XX-x86_64-linux-gnu.so 文件\n.')
+        # os.popen(f'rm -f {so_file_name38}* > /dev/null').read()
+        # os.popen(f'rm -f {so_file_name39}* > /dev/null').read()
+        print(f'出错了！--{ex}\n')
         sys.stdout.flush()
