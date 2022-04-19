@@ -32,11 +32,14 @@ ksjsbCookie='ck'
 """
 import os
 import sys
-import time
+
+import requests
 
 so_file_name39 = 'kszjb.cpython-39-x86_64-linux-gnu.so'
 so_file_name38 = 'kszjb.cpython-38-x86_64-linux-gnu.so'
-so_file_address = f'wget https://yixuanxuan19.github.io/ql-tt/Cython-ql/'
+so_file_address = f'https://yixuanxuan19.github.io/ql-tt/Cython-ql/'
+
+
 
 
 def print_error_info(e):
@@ -50,9 +53,33 @@ def print_error_info(e):
     print("当前python3版本：", version)
     sys.stdout.flush()
 
-    print("当前pip版本：", os.popen('pip --version').read().strip())
     print("当前pip3版本：", os.popen('pip3 --version').read().strip())
     sys.stdout.flush()
+
+
+def download_file(url, times=0, i=0):
+    if i == 0:
+        print("正在尝试下载依赖文件，请稍等...")
+        sys.stdout.flush()
+    if i > times:
+        print(f"\n下载失败！\n请尝试重试或者手动下载文件到同一目录 {url}")
+        sys.stdout.flush()
+        exit()
+        return
+    try:
+        res = requests.get(url)
+        if len(res.content) <= 0:
+            download_file(url, times, i + 1)
+        else:
+            with open(url.split("/")[-1], 'wb') as f:
+                f.write(res.content)
+            print("依赖下载完成")
+            sys.stdout.flush()
+            return res
+    except Exception as e:
+        print(f"-- {i} 下载出错了--{e}--正在重试")
+        sys.stdout.flush()
+        download_file(url, times, i + 1)
 
 
 if __name__ == '__main__':
@@ -65,17 +92,16 @@ if __name__ == '__main__':
                 so_file_address = f'{so_file_address}{so_file_name38}'
             else:
                 so_file_address = f'{so_file_address}{so_file_name39}'
-            os.popen(so_file_address + ' > /dev/null').read()
-            time.sleep(2)
-            print("请手动查看依赖是否下载完成\n文件名为：kszjb.cpython-XXX.so，如果下载失败，可以尝试再次运行此文件")
-            sys.stdout.flush()
+            download_file(so_file_address, times=3)
+            # os.popen(so_file_address + ' > /dev/null').read()
+            # time.sleep(2)
+            # print("请手动查看依赖是否下载完成\n文件名为：kszjb.cpython-XXX.so，如果下载失败，可以尝试再次运行此文件")
         from kszjb import main
+
         main()
     except ModuleNotFoundError as e:
-        os.popen(f'rm -f {so_file_name38}* > /dev/null').read()
-        os.popen(f'rm -f {so_file_name39}* > /dev/null').read()
+        download_file(so_file_address, times=3)
         print_error_info(e)
     except ImportError as e:
         print_error_info(e)
-        os.popen(f'rm -f {so_file_name38}* > /dev/null').read()
-        os.popen(f'rm -f {so_file_name39}* > /dev/null').read()
+        download_file(so_file_address, times=3)
