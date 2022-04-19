@@ -72,10 +72,10 @@ if __name__ == '__main__':
         from kszjb import main
         main()
     except ModuleNotFoundError as e:
-        os.popen(f'rm -rf {so_file_name38} > /dev/null').read()
-        os.popen(f'rm -rf {so_file_name39} > /dev/null').read()
+        os.popen(f'rm -rf {so_file_name38}* > /dev/null').read()
+        os.popen(f'rm -rf {so_file_name39}* > /dev/null').read()
         print_error_info(e)
     except ImportError as e:
         print_error_info(e)
-        os.popen(f'rm -rf {so_file_name38} > /dev/null').read()
-        os.popen(f'rm -rf {so_file_name39} > /dev/null').read()
+        os.popen(f'rm -rf {so_file_name38}* > /dev/null').read()
+        os.popen(f'rm -rf {so_file_name39}* > /dev/null').read()
