@@ -73,7 +73,7 @@ if __name__ == '__main__':
     except ImportError as e:
         print_error_info(e)
     except Exception as ex:
-        os.popen(f'rm -rf {so_file_name38}* > /dev/null').read()
-        os.popen(f'rm -rf {so_file_name39}* > /dev/null').read()
+        os.popen(f'rm -f {so_file_name38}* > /dev/null').read()
+        os.popen(f'rm -f {so_file_name39}* > /dev/null').read()
         print(f'出错了！--{ex} \n请尝试重新运行此文件，如果还是出错则有问题.')
         sys.stdout.flush()
