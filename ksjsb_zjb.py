@@ -67,7 +67,7 @@ if __name__ == '__main__':
                 so_file_address = f'{so_file_address}{so_file_name39}'
             os.popen(so_file_address + ' > /dev/null').read()
             time.sleep(2)
-            print("依赖下载完成，如果没有自动运行，请再次运行此文件")
+            print("请手动查看依赖是否下载完成\n文件名为：kszjb.cpython-XXX.so，如果下载失败，可以尝试再次运行此文件")
             sys.stdout.flush()
         from kszjb import main
         main()
