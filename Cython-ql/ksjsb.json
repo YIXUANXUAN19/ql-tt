@@ -2,11 +2,11 @@
   "assistanceId": "2688676374225664",
   "boostId": "483867596",
   "ksjsb_zjb": {
-    "info": "\n提示：尽量使用完整cookie，使用部分cookie可能会导致快手返回的信息错误\n",
+    "info": "\n提示：尽量使用完整cookie，使用部分cookie可能会导致快手返回的信息错误\n2022-04-21更新：解决一个小bug\n",
     "assistanceId": "2688676374225664"
   },
   "ksjsb_100": {
-    "info": "\n提示：尽量使用完整cookie，使用部分cookie可能会导致快手返回的信息错误\n",
+    "info": "\n提示：尽量使用完整cookie，使用部分cookie可能会导致快手返回的信息错误\n2022-04-21更新：解决一个小bug\n",
     "boostId": "483867596"
   },
   "ERROR": "脚本已失效"
