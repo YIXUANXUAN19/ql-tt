@@ -15,6 +15,7 @@ export ksjsbAssistance=''
 如果没有指定则车头每周助力一次作者，其他号根据排序来互相助力，首先助力排序靠前的号,能保证每个号都能被助力到，实现收益最大化
 
 抓包：二选一
+尽量使用完整cookie，使用部分cookie可能会导致快手返回的信息错误
 推荐完整cookie:  开头是 kpn=NEBULA; kpf=ANDROID_PHONE;，中间有 did=XXX; kuaishou.api_st=XXXXX;
 也可以部分cookie：kuaishou.api_st=XXXXX; did=XXX;   可以只要 kuaishou.api_st=XXX; 但是如果有did的最好把did加上
 
