@@ -12,6 +12,7 @@ new Env('快手极速版-提现100');
 export ksjsbBoostId=''
 
 抓包：二选一
+尽量使用完整cookie，使用部分cookie可能会导致快手返回的信息错误
 推荐完整cookie:  开头是 kpn=NEBULA; kpf=ANDROID_PHONE;，中间有 did=XXX; kuaishou.api_st=XXXXX;
 也可以部分cookie：kuaishou.api_st=XXXXX; did=XXX;   可以只要 kuaishou.api_st=XXX; 但是如果有did的最好把did加上
 
@@ -23,7 +24,7 @@ ksjsbCookie='ck'
 
 可有可无变量：
 自定义 User-Agent：export kszjbUA='XXXXX'
-设置助力一个账号后的等待时间(默认5秒)：export kszjbWait='5'
+设置助力一个账号后的等待时间(默认15秒)：export kszjbWait='15'
 
 """
 
