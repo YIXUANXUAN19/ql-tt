@@ -2,16 +2,16 @@
   "assistanceId": "2707139106345164",
   "boostId": "483867596",
   "ksjsb_zjb": {
-    "info": "提示：尽量使用完整cookie，使用部分cookie可能会导致快手返回的信息错误",
+    "info": "提示：did和kuaishou.api_st是必须的",
     "assistanceId": "2707139106345164",
-    "version": "1.0",
-    "version_info": "2022-04-21更新：解决一个小bug\n"
+    "version": "1.1",
+    "version_info": "2022-04-29更新：解决部分ck返回助力结果错误的问题\n"
   },
   "ksjsb_100": {
-    "info": "提示：尽量使用完整cookie，使用部分cookie可能会导致快手返回的信息错误",
+    "info": "提示：did和kuaishou.api_st是必须的",
     "boostId": "483867596",
-    "version": "1.0",
-    "version_info": "2022-04-21更新：解决一个小bug\n"
+    "version": "1.1",
+    "version_info": "解决部分ck返回助力结果错误的问题\n"
   },
   "ERROR": "脚本已失效"
 }
