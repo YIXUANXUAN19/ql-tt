@@ -2,7 +2,7 @@
   "assistanceId": "2707139106345164",
   "boostId": "483867596",
   "ksjsb_zjb": {
-    "info": "提示：did和kuaishou.api_st是必须的\如果did相同快手会认为是已经助力过了",
+    "info": "提示：did和kuaishou.api_st是必须的. 如果did相同快手会认为是已经助力过了",
     "assistanceId": "2707139106345164",
     "version": "1.1",
     "version_info": "2022-04-29更新：解决部分ck返回助力结果错误的问题\n"
