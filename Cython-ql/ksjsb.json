@@ -8,7 +8,7 @@
   "ksjsb_100": {
     "info": "提示：did和kuaishou.api_st是必须的",
     "boostId": "483867596",
-    "version": "1.2，如需更新则手动删除脚本目录下的cpython",
+    "version": "1.0，如需更新则手动删除脚本目录下的cpython",
     "version_info": "解决部分ck返回助力结果错误的问题\n"
   },
   "ERROR": "脚本已失效"
