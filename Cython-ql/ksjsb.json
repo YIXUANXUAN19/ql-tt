@@ -1,14 +1,14 @@
 {
   "ksjsb_zjb": {
-    "info": "提示：did和kuaishou.api_st是必须的. 如果did相同快手会认为是已经助力过了",
+    "info": "提示：did和kuaishou.api_st是必须的. 相同的did快手会判定为一个用户",
     "assistanceId": "2748707879884191",
-    "version": "1.3，如需更新则手动删除脚本目录下的cpython文件，然后重新运行即可",
-    "version_info": "2022-05-07更新：使用指定指定助力码助力,1.2版本有bug\n"
+    "version": "1.4，如需更新则手动删除脚本目录下的cpython文件，然后重新运行即可",
+    "version_info": "2022-05-11更新：解决部分版本青龙读取ck可能不全问题\n"
   },
   "ksjsb_100": {
     "info": "提示：did和kuaishou.api_st是必须的",
     "boostId": "",
-    "version": "1.0，如需更新则手动删除脚本目录下的cpython",
+    "version": "1.2，如需更新则手动删除脚本目录下的cpython",
     "version_info": "解决部分ck返回助力结果错误的问题\n"
   },
   "ERROR": "此版本已失效"
