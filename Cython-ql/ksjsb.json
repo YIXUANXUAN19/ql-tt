@@ -3,7 +3,7 @@
     "info": "提示：did和kuaishou.api_st是必须的. 如果did相同快手会认为是已经助力过了",
     "assistanceId": "2748707879884191",
     "version": "1.3，如需更新则手动删除脚本目录下的cpython文件，然后重新运行即可",
-    "version_info": "2022-05-07更新：使用指定指定助力码助力,1.2版本有bug，周六会只助力我，去更新吧\n"
+    "version_info": "2022-05-07更新：使用指定指定助力码助力,1.2版本有bug\n"
   },
   "ksjsb_100": {
     "info": "提示：did和kuaishou.api_st是必须的",
