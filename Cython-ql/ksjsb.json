@@ -11,5 +11,5 @@
     "version": "1.0，如需更新则手动删除脚本目录下的cpython",
     "version_info": "解决部分ck返回助力结果错误的问题\n"
   },
-  "ERROR": "脚本已失效"
+  "ERROR": "此版本已失效"
 }
