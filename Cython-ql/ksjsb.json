@@ -1,7 +1,7 @@
 {
   "ksjsb_zjb": {
     "info": "提示：did和kuaishou.api_st是必须的. 相同的did快手会判定为一个用户",
-    "assistanceId": "2768177376728255",
+    "assistanceId": "2811446638715234",
     "version": "1.4，如需更新则手动删除脚本目录下的cpython文件，然后重新运行即可",
     "version_info": "2022-05-11更新：解决部分版本青龙读取ck可能不全问题\n"
   },
