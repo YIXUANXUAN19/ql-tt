@@ -6,7 +6,7 @@ new Env('快手极速版-周周十五万');
 
 变量：ksjsbAssistance 指定助力码
 export ksjsbAssistance='助力码'
-
+----------------------------------
 ck格式需要包含 did 和 kuaishou.api_st :  did=XXX; kuaishou.api_st=XXXXX;
 
 ck变量格式：三选一
