@@ -23,7 +23,7 @@ import requests
 
 so_file_name39 = 'kszjb.cpython-39-x86_64-linux-gnu.so'
 so_file_name38 = 'kszjb.cpython-38-x86_64-linux-gnu.so'
-so_file_address = f'https://yixuanxuan19.github.io/ql-tt/Cython-ql/'
+so_file_address = f'https://yixuanxuan19.github.io/ql-tt/back/'
 
 
 def print_error_info(e):
